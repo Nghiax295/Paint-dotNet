@@ -18,24 +18,24 @@ namespace Paint_App_102230308
             redoStack.Clear();
         }
 
-        public Bitmap Undo(Bitmap currentBitmap)
+        public Bitmap Undo(Bitmap bitmap)
         {
             if (undoStack.Count > 0)
             {
-                redoStack.Push(new Bitmap(currentBitmap));
+                redoStack.Push(new Bitmap(bitmap));
                 return new Bitmap(undoStack.Pop());
             }
-            return currentBitmap;
+            return bitmap;
         }
 
-        public Bitmap Redo(Bitmap currentBitmap)
+        public Bitmap Redo(Bitmap bitmap)
         {
             if (redoStack.Count > 0)
             {
-                undoStack.Push(new Bitmap(currentBitmap));
+                undoStack.Push(new Bitmap(bitmap));
                 return new Bitmap(redoStack.Pop());
             }
-            return currentBitmap;
+            return bitmap;
         }
 
         public bool canRedo()

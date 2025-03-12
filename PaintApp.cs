@@ -14,19 +14,26 @@ namespace Paint_App_102230308
     public partial class PaintApp: Form
     {
         private UndoRedoManager UndoRedo = new UndoRedoManager();
-        private bool isDrawing = false;
+        private Shape shape = new Shape();
+
         private Point previousPoint;
         private Point startPoint;
         private Point endPoint;
+
+
         private Graphics graphics;
+        private Bitmap copiedBitmap;
+        private Bitmap bitmap;
+
+        private bool isDrawing = false;
         private Pen drawingPen = new Pen(Color.Black, 1);
         private Pen penEraser = new Pen(Color.White, 1);
+
         private Color selectedColor = Color.Black;
         private int penSize = 0;
         private string selectedTool = "Pen";
-        private Shape shape = new Shape();
-        private Bitmap copiedBitmap;
-        private Bitmap bitmap;
+        
+        
 
         public PaintApp()
         {

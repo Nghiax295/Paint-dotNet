@@ -25,8 +25,7 @@ namespace Paint_App_102230308
             return new Rectangle(
                 Math.Min(start.X, end.X),
                 Math.Min(start.Y, end.Y),
-                size,
-                size
+                size, size
             );
         }
 
